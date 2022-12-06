@@ -4,65 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordinary calculator</title>
     <link rel="stylesheet" href="styles.css" />
-    <title>Only tusk</title>
   </head>
   <body>
-    <header>
-      <h2>Проверка знаний</h2>
-    </header>
-    <main>
-      <h3>Midjourney AI</h3>
-      <div class="PicExample">
-        <img
-          src="https://cdn.discordapp.com/attachments/966491171142631444/1022444164924846121/kecalkoatluicilopochtli_last_days_on_earth_in_russian_ordinary__c80f5d44-ef50-4f79-b063-2e6a0697304b.png"
-          alt="example of picture"
-        />
-        <h4>Example of picture</h4>
+    <div class="main-calculator">
+      <div class="operations-block">
+        <button class="operation-buttons" id="buttonPlus">+</button>
+        <button class="operation-buttons" id="buttonMinus">-</button>
+        <button class="operation-buttons" id="buttonMultiply">*</button>
+        <button class="operation-buttons" id="buttonDivide">/</button>
       </div>
-      <div class="tablExample">
-        <table>
-          <caption>
-            <strong>Variants of pictures</strong>
-          </caption>
-          <thead>
-            <tr>
-              <th></th>
-            </tr>
-          </thead>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-          </tr>
-        </table>
+      <hr />
+      <div class="inputs-block">
+        <div class="input-block">
+          <label for="">Number 1</label>
+          <input type="number" id="number1" value="200" />
+        </div>
+        <div class="input-block">
+          <label for="">Number 2</label>
+          <input type="number" id="number2" value="100" />
+        </div>
       </div>
-    </main>
-    <footer>
-      <div class="custom-field">
-        <label for="text"></label>
-        <input
-          name="text"
-          type="text"
-          id="input-text"
-          placeholder="Enter the text"
-        />
-        <input type="submit" value="Ok" class="button" id="addText" />
-      </div>
-      <div class="custom-field">
-        <input type="number" class="custom-field_input" id="numberArea1" />
-        <input type="button" value="Ok" class="button" id="cleanNumberArea1" />
-      </div>
-      <div class="custom-field">
-        <input type="number" id="numberArea2" />
-        <input type="button" value="Ok" class="button" id="sumNumberButton" />
-      </div>
-    </footer>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>

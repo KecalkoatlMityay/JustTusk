@@ -1,34 +1,44 @@
-addEventListener("click", (e) => console.log(e.target.tagName));
+// var buttonPlus = document.getElementById("buttonPlus");
+// var buttonMinus = document.getElementById("buttonMinus");
+// var buttonMultiply = document.getElementById("buttonMultiply");
+// var buttonDivide = document.getElementById("buttonDivide");
 
-let inputText = document.getElementById("addText");
+var operationButtons = document.getElementsByClassName("operation-buttons");
 
-inputText.addEventListener("click", getText);
+var input1 = document.getElementById("number1");
+var input2 = document.getElementById("number2");
 
-function getText() {
-  var getT = document.getElementById("input-text").value;
-  alert(getT);
+function makeOperationCode(operationCode) {
+  var number1 = Number(input1.value);
+  var number2 = Number(input2.value);
+
+  if (operationCode === "+") {
+    var result = number1 + number2;
+  } else if (operationCode === "-") {
+    var result = number1 - number2;
+  } else if (operationCode === "*") {
+    var result = number1 * number2;
+  } else if (operationCode === "/") {
+    var result = number1 / number2;
+  } else {
+    window.alert("Operation is unknown");
+  }
+
+  alert(result);
 }
 
-let inputNumberArea1 = document.getElementById("cleanNumberArea1");
-
-inputNumberArea1.addEventListener("click", cleanNumberArea1);
-
-function cleanNumberArea1() {
-  var getNumber = document.getElementById("numberArea1");
-  getNumber.value = "";
+function onOperationButtonClick(eventObject) {
+  var clickedElement = eventObject.currentTarget;
+  var operation = clickedElement.innerHTML;
+  makeOperationCode(operation);
 }
 
-let inputNumberArea2 = document.getElementById("NumberArea2");
-
-let sumNumberAreas = document.getElementById("sumNumberButton");
-
-sumNumberAreas.addEventListener("click", sumNumbers);
-
-function sumNumbers() {
-  var getNumber1 = parseInt(document.getElementById("numberArea1").value);
-  var getNumber2 = parseInt(document.getElementById("numberArea2").value);
-  // if (isNaN(getNumber1.value) == true) getNumber1 = 0;
-  // if (isNaN(getNumber2.value) == true) getNumber2 = 0;
-  var sumResult = getNumber1 + getNumber2;
-  document.getElementById("numberArea2").value = sumResult;
+for (var i = 0; i < operationButtons.length; i++) {
+  var button = operationButtons[i];
+  button.addEventListener("click", onOperationButtonClick);
 }
+
+// buttonPlus.addEventListener("click", onOperationButtonClick);
+// buttonMinus.addEventListener("click", onOperationButtonClick);
+// buttonMultiply.addEventListener("click", onOperationButtonClick);
+// buttonDivide.addEventListener("click", onOperationButtonClick);
